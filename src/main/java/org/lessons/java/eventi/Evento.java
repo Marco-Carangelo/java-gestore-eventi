@@ -95,5 +95,17 @@ public class Evento {
 		
 	}
 	
+	//Override del metodo toString() per restiture le informazioni sull'evento
+	
+	public String toString() {
+		
+		
+		String dataFormattata = GestoreEventiUtil.formattaData(dataEvento);
+		
+		return (dataFormattata + " - " + this.titolo);
+		
+		
+	}
+	
 
 }
