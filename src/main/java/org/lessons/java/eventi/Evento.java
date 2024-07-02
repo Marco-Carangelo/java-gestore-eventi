@@ -23,6 +23,57 @@ public class Evento {
 		
 	}
 	
+	//Metodi Getter e Setter
+
+
+	public String getTitolo() {
+		return titolo;
+	}
+
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+
+
+	public Calendar getDataEvento() {
+		return dataEvento;
+	}
+
+
+	public void setDataEvento(Calendar dataEvento) {
+		this.dataEvento = dataEvento;
+	}
+
+
+	public int getNumPosti() {
+		return numPosti;
+	}
+
+
+	public int getNumPrenotazioni() {
+		return numPrenotazioni;
+	}
+	
+	
+	//Metodo per prenotare un posto all'evento
+	
+	public void prenotaPosto() {
+		
+		if(dataEvento.before(dataOdierna)) {
+			
+			System.out.println("L'evento è già passato");
+			
+		}else if(numPrenotazioni == numPosti){
+			
+			System.out.println("I posti per quest'evento sono esauriti");
+			
+		}else {
+			
+			numPrenotazioni++;
+			
+		}
+	}
 	
 
 }
