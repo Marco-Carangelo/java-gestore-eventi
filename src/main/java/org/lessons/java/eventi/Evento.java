@@ -56,7 +56,7 @@ public class Evento {
 	}
 	
 	
-	//Metodo per prenotare un posto all'evento
+	//Metodo per prenotare un posto dell'evento
 	
 	public void prenotaPosto() {
 		
@@ -70,9 +70,29 @@ public class Evento {
 			
 		}else {
 			
-			numPrenotazioni++;
+			this.numPrenotazioni++;
 			
 		}
+	}
+	
+	//Metodo per disdire un posto prenotato
+	
+	public void disdiciPosto() {
+		
+		if(dataEvento.before(dataOdierna)) {
+			
+			System.out.println("L'evento è già passato");
+			
+		}else if(numPrenotazioni == 0){
+			
+			System.out.println("I posti per quest'evento sono esauriti");
+			
+		}else {
+			
+			this.numPrenotazioni--;
+			
+		}
+		
 	}
 	
 
