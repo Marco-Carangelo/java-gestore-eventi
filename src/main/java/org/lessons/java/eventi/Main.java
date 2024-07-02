@@ -14,7 +14,8 @@ public class Main {
 		//Dichiariazione delle variabili
 		
 		String titoloNuovoEvento;
-		Calendar dataNuovoEvento;
+		Calendar dataNuovoEvento = null;
+		Calendar dataOdierna = Calendar.getInstance();
 		int postiNuovoEvento;
 		
 		//Variabili per settare la data di dataNuovoEvento
@@ -23,7 +24,46 @@ public class Main {
 		int meseNuovoEvento;
 		int giornoNuovoEvento;
 		
+		//Variabile per controllare i cicli d'inserimento dei dati
 		
+		boolean check = true;
+		
+		//Richiediamo all'utente di inserire i dati necessari
+		
+		System.out.println("Inserisci il titolo dell'evento che si vuole creare: ");
+		
+		titoloNuovoEvento = scanner.nextLine();
+		
+		do {
+			
+			System.out.println("Inserisci la data dell'evento nell'ordine giorno - mese - anno in formato numerico.");
+			System.out.println("Per esempio per indicare l'1 gennaio 2025 inserire 1 - 1 - 2025.");
+			
+			System.out.println("Inserire il giorno dell'evento: ");
+			giornoNuovoEvento = scanner.nextInt();
+			
+			System.out.println("Inserire il mese dell'evento: ");
+			meseNuovoEvento = scanner.nextInt();
+			
+			System.out.println("Inserire l'anno dell'evento: ");
+			annoNuovoEvento = scanner.nextInt();
+			
+			dataNuovoEvento.set(annoNuovoEvento, meseNuovoEvento, giornoNuovoEvento);
+			
+			if(dataNuovoEvento.after(dataOdierna)) {
+				
+				check = true;
+				
+			}
+				
+			else {
+				
+				System.out.println("La data inserita è già passata. Si prega di inserire una data valida.");
+				check = false;
+			}
+				
+			
+		}while(!check);
 		
 		
 		
