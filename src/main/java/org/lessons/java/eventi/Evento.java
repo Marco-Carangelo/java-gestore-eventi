@@ -107,5 +107,18 @@ public class Evento {
 		
 	}
 	
+	
+	//Metodo che calcola e restituisce il numero di posti disponibili
+	
+	public int postiDisponibili() {
+		
+		int postiDisponibili =  this.numPosti - this.numPrenotazioni;
+		
+		return postiDisponibili;
+		
+	}
+	
+	
+	
 
 }
