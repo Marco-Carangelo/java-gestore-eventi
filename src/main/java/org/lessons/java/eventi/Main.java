@@ -34,6 +34,8 @@ public class Main {
 		
 		titoloNuovoEvento = scanner.nextLine();
 		
+		//Ciclo per acquisire i campi della data e validarne l'input
+		
 		do {
 			
 			System.out.println("Inserisci la data dell'evento nell'ordine giorno - mese - anno in formato numerico.");
@@ -65,6 +67,27 @@ public class Main {
 			
 		}while(!check);
 		
+		
+		//Ciclo per acquisire il numero di posti totali e validare l'inpuit
+		
+		do {
+			
+			System.out.println("Inserire il numero di posti totali disponibili per l'evento: ");
+			postiNuovoEvento = scanner.nextInt();
+			
+			if(postiNuovoEvento > 0) {
+				
+				check = true;
+				
+			}
+				
+			else {
+				
+				System.out.println("Il numero di posti dev'essere maggiore di 0, inserire un valore valido.");
+				check = false;
+			}
+			
+		}while(!check);
 		
 		
 
