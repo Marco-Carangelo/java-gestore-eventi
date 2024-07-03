@@ -21,7 +21,7 @@ public class Event {
 		
 		if(eventDate.after(currentDate)) {
 			
-			this.eventDate = eventDate;	
+			this.eventDate = (Calendar) eventDate.clone();	
 			
 		}else {
 			
