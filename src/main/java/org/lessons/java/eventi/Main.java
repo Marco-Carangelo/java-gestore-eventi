@@ -7,64 +7,64 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//Inizializziamo un'istanza della classe Scanner per poter acquisire input dall'utente
+		//Scanner classe instance to acquire input by user
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		//Dichiariazione delle variabili
+		//Main method variables definition
 		
-		String titoloNuovoEvento;
-		Calendar dataNuovoEvento = null;
-		Calendar dataOdierna = Calendar.getInstance();
-		int postiNuovoEvento;
-		int numeroPrenotazioni;
+		String newEventTitle;
+		Calendar newEventDate = null;
+		Calendar currentDate = Calendar.getInstance();
+		int newEventSeats;
+		int numberOfReservations;
 		
 		//Variabili per settare la data di dataNuovoEvento
 		
-		int annoNuovoEvento;
-		int meseNuovoEvento;
-		int giornoNuovoEvento;
+		int newEventYear;
+		int newEventMonth;
+		int newEventDay;
 		
 		//Variabile per controllare i cicli d'inserimento dei dati
 		
 		//boolean check = true;
 		
-		//Richiediamo all'utente di inserire i dati necessari
+		//Ask to user the title of the new event
 		
-		System.out.println("Inserisci il titolo dell'evento che si vuole creare: ");
+		System.out.println("Enter the title of the new event: ");
 		
-		titoloNuovoEvento = scanner.nextLine();
+		newEventTitle = scanner.nextLine();
 		
-		//Acquisizione della data
+		//Ask to user the date of the new event
 		
 			
-		System.out.println("Inserisci la data dell'evento nell'ordine giorno - mese - anno in formato numerico.");
-		System.out.println("Per esempio per indicare l'1 gennaio 2025 inserire 1 - 1 - 2025.");
+		System.out.println("Enter the date of the new event in the order year, month, day in numeric form");
+		System.out.println("For example, to indicate April 1 2025 enter 2025 - 4 - 1");
 		
-		System.out.println("Inserire il giorno dell'evento: ");
-		giornoNuovoEvento = scanner.nextInt();
+		System.out.println("Enter the year of the event: ");
+		newEventYear = scanner.nextInt();
 		
-		System.out.println("Inserire il mese dell'evento: ");
-		meseNuovoEvento = scanner.nextInt();
+		System.out.println("Enter the month of the event: ");
+		newEventMonth = (scanner.nextInt() - 1);
 		
-		System.out.println("Inserire l'anno dell'evento: ");
-		annoNuovoEvento = scanner.nextInt();
+		System.out.println("Enter the day of the event: ");
+		newEventDay = scanner.nextInt();
 		
-		dataNuovoEvento.set(annoNuovoEvento, meseNuovoEvento, giornoNuovoEvento);
+		newEventDate.set(newEventYear, newEventMonth, newEventDay);
 	
 		
-		//Acquisizione del numero di posti totali per l'evento
+		//Ask to user the number of seats of the new event
 		
 			
-		System.out.println("Inserire il numero di posti totali disponibili per l'evento: ");
-		postiNuovoEvento = scanner.nextInt();
+		System.out.println("Enter the number of seats expected for the event: ");
+		newEventSeats = scanner.nextInt();
 			
 		
-		//Creiamo un'istanza della classe Evento e passiamo gli attributi necessari
+		//Instance of the Event class
 		
-		Evento nuovoEvento = new Evento(titoloNuovoEvento, dataNuovoEvento, postiNuovoEvento);
+		Event newEvent = new Event(newEventTitle, newEventDate, newEventSeats);
 		
-		
+		// fare due cicli while(data == null) e while(numPosti == 0)
 		
 		
 		
