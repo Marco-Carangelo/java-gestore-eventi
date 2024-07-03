@@ -17,6 +17,7 @@ public class Main {
 		Calendar dataNuovoEvento = null;
 		Calendar dataOdierna = Calendar.getInstance();
 		int postiNuovoEvento;
+		int numeroPrenotazioni;
 		
 		//Variabili per settare la data di dataNuovoEvento
 		
@@ -26,7 +27,7 @@ public class Main {
 		
 		//Variabile per controllare i cicli d'inserimento dei dati
 		
-		boolean check = true;
+		//boolean check = true;
 		
 		//Richiediamo all'utente di inserire i dati necessari
 		
@@ -34,60 +35,39 @@ public class Main {
 		
 		titoloNuovoEvento = scanner.nextLine();
 		
-		//Ciclo per acquisire i campi della data e validarne l'input
+		//Acquisizione della data
 		
-		do {
 			
-			System.out.println("Inserisci la data dell'evento nell'ordine giorno - mese - anno in formato numerico.");
-			System.out.println("Per esempio per indicare l'1 gennaio 2025 inserire 1 - 1 - 2025.");
+		System.out.println("Inserisci la data dell'evento nell'ordine giorno - mese - anno in formato numerico.");
+		System.out.println("Per esempio per indicare l'1 gennaio 2025 inserire 1 - 1 - 2025.");
+		
+		System.out.println("Inserire il giorno dell'evento: ");
+		giornoNuovoEvento = scanner.nextInt();
+		
+		System.out.println("Inserire il mese dell'evento: ");
+		meseNuovoEvento = scanner.nextInt();
+		
+		System.out.println("Inserire l'anno dell'evento: ");
+		annoNuovoEvento = scanner.nextInt();
+		
+		dataNuovoEvento.set(annoNuovoEvento, meseNuovoEvento, giornoNuovoEvento);
+	
+		
+		//Acquisizione del numero di posti totali per l'evento
+		
 			
-			System.out.println("Inserire il giorno dell'evento: ");
-			giornoNuovoEvento = scanner.nextInt();
+		System.out.println("Inserire il numero di posti totali disponibili per l'evento: ");
+		postiNuovoEvento = scanner.nextInt();
 			
-			System.out.println("Inserire il mese dell'evento: ");
-			meseNuovoEvento = scanner.nextInt();
-			
-			System.out.println("Inserire l'anno dell'evento: ");
-			annoNuovoEvento = scanner.nextInt();
-			
-			dataNuovoEvento.set(annoNuovoEvento, meseNuovoEvento, giornoNuovoEvento);
-			
-			if(dataNuovoEvento.after(dataOdierna)) {
-				
-				check = true;
-				
-			}
-				
-			else {
-				
-				System.out.println("La data inserita è già passata. Si prega di inserire una data valida.");
-				check = false;
-			}
-				
-			
-		}while(!check);
+		
+		//Creiamo un'istanza della classe Evento e passiamo gli attributi necessari
+		
+		Evento nuovoEvento = new Evento(titoloNuovoEvento, dataNuovoEvento, postiNuovoEvento);
 		
 		
-		//Ciclo per acquisire il numero di posti totali e validare l'inpuit
 		
-		do {
-			
-			System.out.println("Inserire il numero di posti totali disponibili per l'evento: ");
-			postiNuovoEvento = scanner.nextInt();
-			
-			if(postiNuovoEvento > 0) {
-				
-				check = true;
-				
-			}
-				
-			else {
-				
-				System.out.println("Il numero di posti dev'essere maggiore di 0, inserire un valore valido.");
-				check = false;
-			}
-			
-		}while(!check);
+		
+		
 		
 		
 
