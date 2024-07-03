@@ -15,11 +15,12 @@ public class Main {
 		
 		String newEventTitle;
 		Calendar newEventDate = Calendar.getInstance();
-		Calendar currentDate = Calendar.getInstance();
+		//Calendar currentDate = Calendar.getInstance();
 		int newEventSeats;
 		int numberOfReservations;
 		int numnerOfCancellations;
 		
+		//Variable used to check continuation of while cycles
 		boolean check = true;
 		
 		//Ask to user the title of the new event
