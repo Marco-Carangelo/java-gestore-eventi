@@ -131,7 +131,8 @@ public class Main {
 		newEvent.seatsInfo();
 	
 		
-
+		
+		scanner.close();
 	}
 
 }
