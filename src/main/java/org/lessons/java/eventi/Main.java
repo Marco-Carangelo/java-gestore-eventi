@@ -19,10 +19,7 @@ public class Main {
 		int newEventSeats;
 		int numberOfReservations;
 		
-		
-		//Variabile per controllare i cicli d'inserimento dei dati
-		
-		//boolean check = true;
+		boolean check = true;
 		
 		//Ask to user the title of the new event
 		
@@ -48,8 +45,45 @@ public class Main {
 		
 		Event newEvent = new Event(newEventTitle, newEventDate, newEventSeats);
 		
-		// fare due cicli while(data == null) e while(numPosti == 0)
+		//Print event information to check the correct creation of the instance
+		System.out.println(newEvent.toString());
 		
+		
+		//Aske user if he wants to make any reservation and if yes, how many of it
+		
+		
+		while(check) {
+			
+			System.out.println("Do you want to make a reservation?");
+			
+			if(EventManagerUtil.choiceManager()) {
+				
+				//Ask user how many reservation wants to make
+				
+				System.out.println("How many seats do you want to reserve?");
+				numberOfReservations = scanner.nextInt();
+				
+				if(numberOfReservations <= newEvent.availableSeats()) {
+					
+					for(int i= 0; i < numberOfReservations; i++)
+						newEvent.reserveSeat();	
+					
+				}else {
+					
+					System.out.println("Sorry but number of available seats are only: " + newEvent.availableSeats() + "\nA reservetion for an higher number cannot be booked" );
+					
+				}
+				
+				
+			}
+			
+			else {
+				
+				check = false;
+			}
+			
+			
+		}
 		
 		
 		
