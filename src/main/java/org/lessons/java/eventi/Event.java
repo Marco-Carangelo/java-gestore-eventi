@@ -188,6 +188,15 @@ public class Event {
 		
 	}
 	
+	//Method used to display info about the number of seats reserved and available
+	
+	public void seatsInfo() {
+	
+		System.out.println("Number of reserved seats: " + getEventReservation());
+		System.out.println("Number of available seats: " + availableSeats());
+		
+	}
+	
 	
 	
 
