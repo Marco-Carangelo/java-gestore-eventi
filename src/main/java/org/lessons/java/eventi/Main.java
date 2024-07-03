@@ -14,16 +14,11 @@ public class Main {
 		//Main method variables definition
 		
 		String newEventTitle;
-		Calendar newEventDate = null;
+		Calendar newEventDate = Calendar.getInstance();
 		Calendar currentDate = Calendar.getInstance();
 		int newEventSeats;
 		int numberOfReservations;
 		
-		//Variabili per settare la data di dataNuovoEvento
-		
-		int newEventYear;
-		int newEventMonth;
-		int newEventDay;
 		
 		//Variabile per controllare i cicli d'inserimento dei dati
 		
@@ -36,22 +31,11 @@ public class Main {
 		newEventTitle = scanner.nextLine();
 		
 		//Ask to user the date of the new event
-		
 			
 		System.out.println("Enter the date of the new event in the order year, month, day in numeric form");
 		System.out.println("For example, to indicate April 1 2025 enter 2025 - 4 - 1");
 		
-		System.out.println("Enter the year of the event: ");
-		newEventYear = scanner.nextInt();
-		
-		System.out.println("Enter the month of the event: ");
-		newEventMonth = (scanner.nextInt() - 1);
-		
-		System.out.println("Enter the day of the event: ");
-		newEventDay = scanner.nextInt();
-		
-		newEventDate.set(newEventYear, newEventMonth, newEventDay);
-	
+		newEventDate =  (Calendar) EventManagerUtil.populateDate().clone();
 		
 		//Ask to user the number of seats of the new event
 		
