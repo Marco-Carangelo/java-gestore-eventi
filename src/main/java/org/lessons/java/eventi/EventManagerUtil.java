@@ -2,6 +2,7 @@ package org.lessons.java.eventi;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Scanner;
 
 //Utility class for event manager 
 
@@ -18,7 +19,28 @@ public class EventManagerUtil {
 	}
 	
 	
-	//Metodo per acquisire i campi di un oggetto di tipo data
+	//Method used to acquire the fields to populate a calendar object
+	
+	public static Calendar populateDate() {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Enter the year of the event: ");
+		 int newEventYear = scanner.nextInt();
+		
+		System.out.println("Enter the month of the event: ");
+		 int newEventMonth = (scanner.nextInt() - 1);
+		
+		System.out.println("Enter the day of the event: ");
+		int newEventDay = scanner.nextInt();
+		
+		Calendar newEventDate = Calendar.getInstance();
+		
+		newEventDate.set(newEventYear, newEventMonth, newEventDay);
+		
+		return newEventDate;
+		
+	}
 	
 	
 
