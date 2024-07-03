@@ -90,7 +90,7 @@ public class Event {
 	}
 	
 	
-	//Method used to reserve a seats at the event
+	//Methods used to reserve a seats at the event
 	
 	public void reserveSeat() {
 		
@@ -126,7 +126,7 @@ public class Event {
 		}
 	}
 	
-	//Method used to delete a reservation
+	//Methods used to delete a reservation
 	
 	public void cancelReservation() {
 		
@@ -141,6 +141,25 @@ public class Event {
 		}else {
 			
 			this.eventReservation--;
+			
+		}
+		
+	}
+	
+	
+	public void cancelReservation( int cancNumber) {
+		
+		if(eventDate.before(currentDate)) {
+			
+			System.out.println("The event is already passed");
+			
+		}else if(eventReservation == 0){
+			
+			System.out.println("There are no reservetion to cancel for this event");
+			
+		}else {
+			
+			this.eventReservation -= cancNumber;
 			
 		}
 		
