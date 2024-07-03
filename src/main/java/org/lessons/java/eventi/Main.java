@@ -18,6 +18,7 @@ public class Main {
 		Calendar currentDate = Calendar.getInstance();
 		int newEventSeats;
 		int numberOfReservations;
+		int numnerOfCancellations;
 		
 		boolean check = true;
 		
@@ -54,7 +55,7 @@ public class Main {
 		
 		while(check) {
 			
-			System.out.println("Do you want to make a reservation?");
+			System.out.println("Do you want to make one or more reservation?");
 			
 			if(EventManagerUtil.choiceManager()) {
 				
@@ -85,10 +86,52 @@ public class Main {
 			
 		}
 		
+		
+		//Print information about available and reserved seats
+		
 		System.out.println("Number of reserved seats: " + newEvent.getEventReservation());
 		System.out.println("Number of available seats: " + newEvent.availableSeats());
 		
+		//Reset of the check variable
+		check = true;
 		
+		while(check) {
+			
+			System.out.println("Do you want to cancel one or more reservation?");
+			
+			if(EventManagerUtil.choiceManager()) {
+				
+				//Ask user how many reservation wants to cancel
+				
+				System.out.println("How many reservation do you want to cancel?");
+				numnerOfCancellations = scanner.nextInt();
+				
+				if(numnerOfCancellations <= newEvent.getEventReservation()) {
+					
+					newEvent.cancelReservation(numnerOfCancellations);	
+					check = false;
+					
+				}else {
+					
+					System.out.println("Sorry but number of reserved seats are only " + newEvent.getEventReservation() + "\nA cancellation for an higher number cannot be done" );
+					
+				}
+				
+				
+			}
+			
+			else {
+				
+				check = false;
+			}
+			
+		}
+		
+		//Print information about available and reserved seats
+	
+			System.out.println("Number of reserved seats: " + newEvent.getEventReservation());
+			System.out.println("Number of available seats: " + newEvent.availableSeats());
+	
 		
 
 	}
