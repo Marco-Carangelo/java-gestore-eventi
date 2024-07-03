@@ -89,8 +89,7 @@ public class Main {
 		
 		//Print information about available and reserved seats
 		
-		System.out.println("Number of reserved seats: " + newEvent.getEventReservation());
-		System.out.println("Number of available seats: " + newEvent.availableSeats());
+		newEvent.seatsInfo();
 		
 		//Reset of the check variable
 		check = true;
@@ -129,8 +128,7 @@ public class Main {
 		
 		//Print information about available and reserved seats
 	
-			System.out.println("Number of reserved seats: " + newEvent.getEventReservation());
-			System.out.println("Number of available seats: " + newEvent.availableSeats());
+		newEvent.seatsInfo();
 	
 		
 
