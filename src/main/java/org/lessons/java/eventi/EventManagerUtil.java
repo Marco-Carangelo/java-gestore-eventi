@@ -29,10 +29,10 @@ public class EventManagerUtil {
 		
 		
 		System.out.println("Enter the year of the event: ");
-		 int newEventYear = scanner.nextInt();
+		int newEventYear = scanner.nextInt();
 		
 		System.out.println("Enter the month of the event: ");
-		 int newEventMonth = (scanner.nextInt() - 1);
+		int newEventMonth = (scanner.nextInt() - 1);
 		
 		System.out.println("Enter the day of the event: ");
 		int newEventDay = scanner.nextInt();
@@ -84,5 +84,5 @@ public class EventManagerUtil {
 		}
 	
 	
-
+	
 }
