@@ -109,6 +109,23 @@ public class Event {
 		}
 	}
 	
+	public void reserveSeat( int resNumber) {
+		
+		if(eventDate.before(currentDate)) {
+			
+			System.out.println("The event is already passed");
+			
+		}else if(eventReservation == seatsNumber){
+			
+			System.out.println("The event is soldout");
+			
+		}else {
+			
+			this.eventReservation += resNumber;
+			
+		}
+	}
+	
 	//Method used to delete a reservation
 	
 	public void cancelReservation() {
