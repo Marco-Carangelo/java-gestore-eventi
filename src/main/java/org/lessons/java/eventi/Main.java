@@ -65,12 +65,12 @@ public class Main {
 				
 				if(numberOfReservations <= newEvent.availableSeats()) {
 					
-					for(int i= 0; i < numberOfReservations; i++)
-						newEvent.reserveSeat();	
+					newEvent.reserveSeat(numberOfReservations);	
+					check = false;
 					
 				}else {
 					
-					System.out.println("Sorry but number of available seats are only: " + newEvent.availableSeats() + "\nA reservetion for an higher number cannot be booked" );
+					System.out.println("Sorry but number of available seats are only " + newEvent.availableSeats() + "\nA reservetion for an higher number cannot be booked" );
 					
 				}
 				
@@ -85,6 +85,8 @@ public class Main {
 			
 		}
 		
+		System.out.println("Number of reserved seats: " + newEvent.getEventReservation());
+		System.out.println("Number of available seats: " + newEvent.availableSeats());
 		
 		
 		
