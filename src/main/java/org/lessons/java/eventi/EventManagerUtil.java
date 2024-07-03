@@ -15,7 +15,7 @@ public class EventManagerUtil {
 	
 	public static String dateFormatter(Calendar date){
 		
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd / MM / yyyy / kk:mm");
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("dd / MM / yyyy");
 		
 		return (dateFormatter.format(date.getTime()));
 		
