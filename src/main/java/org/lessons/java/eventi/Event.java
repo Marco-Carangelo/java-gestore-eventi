@@ -1,7 +1,6 @@
 package org.lessons.java.eventi;
 
 import java.util.Calendar;
-import java.util.Scanner;
 
 public class Event {
 	
@@ -13,8 +12,6 @@ public class Event {
 	private int eventReservation = 0;
 	private Calendar currentDate = Calendar.getInstance();
 	
-	Scanner scanner = new Scanner(System.in);
-	
 	
 	//Constructor method
 	
@@ -22,22 +19,18 @@ public class Event {
 		
 		this.title = title;
 		
-		while(this.eventDate == null) {
-			
-			if(eventDate.after(currentDate)) {
-				
-				this.eventDate = (Calendar) eventDate.clone();	
-				
-			}else {
-				
-				System.out.println("The date entered is already passed. Please enter a valid date");
-				eventDate = EventManagerUtil.populateDate();
-				
-			}
 		
+		if(eventDate.after(currentDate)) {
+			
+			this.eventDate = (Calendar) eventDate.clone();	
+			
+		}else {
+			
+			System.out.println("The date entered is already passed.");
+			
 		}
 		
-		while(this.seatsNumber <= 0) {
+		
 		
 			if(seatsNumber > 0 ) {
 				
@@ -45,11 +38,9 @@ public class Event {
 				
 			}else {
 				
-				System.out.println("The number of seats for the event must be greater then 0. Please enter a valid number of seats");
-				setSeatsNumber(scanner.nextInt());
+				System.out.println("The number of seats for the event must be greater then 0.");
 				
 			}
-		}
 		
 	}
 	
@@ -80,10 +71,6 @@ public class Event {
 		return seatsNumber;
 	}
 	
-
-	private void setSeatsNumber(int seatsNumber) {
-		this.seatsNumber = seatsNumber;
-	}
 
 	public int getEventReservation() {
 		return eventReservation;
