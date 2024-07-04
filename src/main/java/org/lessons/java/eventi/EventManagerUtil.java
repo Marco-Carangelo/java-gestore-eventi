@@ -71,14 +71,4 @@ public class EventManagerUtil {
 		}
 		
 	
-	//Method that takes two variables for hours and minutes and return a localTime object
-		
-		public static LocalTime setHour(int hour, int minutes) {
-			
-			LocalTime settedHour = LocalTime.of(hour, minutes);
-			
-			return settedHour;
-			
-		}
-	
 }
