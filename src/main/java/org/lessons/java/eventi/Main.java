@@ -59,17 +59,18 @@ public class Main {
 			
 			Event newEvent = new Event(newEventTitle, newEventDate, newEventSeats);
 			
-		
+			//The part of the code regarding reservation and print event info is executed
+			//only if the data entered is correct
+			
 			if(newEvent.getEventDate() != null && newEvent.getSeatsNumber() > 0 ) {
 		
 				//Print event information to check the correct creation of the instance
 				System.out.println(newEvent.toString());
 				
-				
 				//Ask user if he wants to make any reservation and if yes, how many of it
+				//The program exit the loop when the reservation are validated and made or when he choose to no enter a reservation
 				
 				check = true;
-				
 				while(check) {
 					
 					System.out.println("Do you want to make one or more reservation?");
@@ -77,10 +78,11 @@ public class Main {
 					if(EventManagerUtil.choiceManager()) {
 						
 						//Ask user how many reservation wants to make
-						
+				
 						System.out.println("How many seats do you want to reserve?");
 						numberOfReservations = scanner.nextInt();
 						
+						//Check if the number entered is greater then the available seats and if so warns the user
 						if(numberOfReservations <= newEvent.availableSeats()) {
 							
 							newEvent.reserveSeat(numberOfReservations);	
@@ -93,9 +95,7 @@ public class Main {
 						}
 						
 						
-					}
-					
-					else {
+					}else {
 						
 						check = false;
 					}
@@ -108,12 +108,9 @@ public class Main {
 				
 				newEvent.seatsInfo();
 				
+				//Ask user if he wants to cancel a reservation
 				//Reset of the check variable
 				check = true;
-				
-				
-				//Ask user if he wants to cancel a reservation
-				
 				while(check) {
 					
 					System.out.println("Do you want to cancel one or more reservation?");
@@ -152,6 +149,7 @@ public class Main {
 				newEvent.seatsInfo();
 				
 				check = false;
+				
 		}else {
 			
 			System.out.println("The event data insertion must be repeated");

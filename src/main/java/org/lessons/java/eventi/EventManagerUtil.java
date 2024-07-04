@@ -23,24 +23,6 @@ public class EventManagerUtil {
 	}
 	
 	
-	//Method used to acquire the fields to populate a calendar object
-	
-	public static Calendar populateDate(int year, int month, int day) {
-		
-		
-		int newEventYear = year;
-		int newEventMonth = month;
-		int newEventDay = day;
-		
-		Calendar newEventDate = Calendar.getInstance();
-		
-		newEventDate.set(newEventYear, newEventMonth, newEventDay);
-		
-		return newEventDate;
-		
-	}
-	
-	
 	//Method to manage a choice between yes or not
 	
 		static public boolean choiceManager() {
