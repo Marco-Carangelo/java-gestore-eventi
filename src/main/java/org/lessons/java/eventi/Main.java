@@ -34,23 +34,23 @@ public class Main {
 			
 			//Ask to user the date of the new event
 				
-			System.out.println("Enter the date of the new event in the order year, month, day in numeric form");
+			System.out.println("\nEnter the date of the new event in the order year, month, day in numeric form");
 			System.out.println("For example, to indicate April 1 2025 enter 2025 - 4 - 1");
 			
-			System.out.println("Enter the year of the event: ");
+			System.out.println("\nEnter the year of the event: ");
 			int newEventYear = scanner.nextInt();
 			
-			System.out.println("Enter the month of the event: ");
+			System.out.println("\nEnter the month of the event: ");
 			int newEventMonth = (scanner.nextInt() - 1);
 			
-			System.out.println("Enter the day of the event: ");
+			System.out.println("\nEnter the day of the event: ");
 			int newEventDay = scanner.nextInt();
 			
 			newEventDate.set(newEventYear, newEventMonth, newEventDay);
 			
 			//Ask to user the number of seats of the new event
 				
-			System.out.println("Enter the number of seats expected for the event: ");
+			System.out.println("\nEnter the number of seats expected for the event: ");
 			newEventSeats = scanner.nextInt();
 			scanner.nextLine();
 				
@@ -73,14 +73,15 @@ public class Main {
 				check = true;
 				while(check) {
 					
-					System.out.println("Do you want to make one or more reservation?");
+					System.out.println("\nDo you want to make one or more reservation?");
 					
 					if(EventManagerUtil.choiceManager()) {
 						
 						//Ask user how many reservation wants to make
 				
-						System.out.println("How many seats do you want to reserve?");
+						System.out.println("\nHow many seats do you want to reserve?");
 						numberOfReservations = scanner.nextInt();
+						scanner.nextLine();
 						
 						//Check if the number entered is greater then the available seats and if so warns the user
 						if(numberOfReservations <= newEvent.availableSeats()) {
@@ -113,14 +114,15 @@ public class Main {
 				check = true;
 				while(check) {
 					
-					System.out.println("Do you want to cancel one or more reservation?");
+					System.out.println("\nDo you want to cancel one or more reservation?");
 					
 					if(EventManagerUtil.choiceManager()) {
 						
 						//Ask user how many reservation wants to cancel
 						
-						System.out.println("How many reservation do you want to cancel?");
+						System.out.println("\nHow many reservation do you want to cancel?");
 						numnerOfCancellations = scanner.nextInt();
+						scanner.nextLine();
 						
 						if(numnerOfCancellations <= newEvent.getEventReservation()) {
 							
@@ -158,46 +160,89 @@ public class Main {
 		
 	}
 		
-//		//SECTION TO TEST THE CONCERT SUBCLASS
-//		
-//		System.out.println("*********************************************");
-//		
-//		//Declaration of the additional variables to populate the concert instance
-//		
-//		int concertHour;
-//		int concertMinutes;
-//		LocalTime concertTime;
-//		float concertPrice;
-//		
-//		System.out.println("\nEnter the title of the new event: ");
-//		newEventTitle = scanner.next();
-//		
-//		System.out.println("Enter the date of the new event in the order year, month, day in numeric form");
-//		System.out.println("For example, to indicate April 1 2025 enter 2025 - 4 - 1");
-//		
-//		newEventDate =  (Calendar) EventManagerUtil.populateDate().clone();
-//		
-//		System.out.println("Enter the hour of the event in the order hours and then minutes");
-//		System.out.println("Enter the hour: ");
-//		concertHour = scanner.nextInt();
-//		System.out.println("Enter the minutes: ");
-//		concertMinutes = scanner.nextInt();
-//		concertTime = EventManagerUtil.setHour(concertHour, concertMinutes);
-//		
-//		System.out.println("Enter the number of seats expected for the event: ");
-//		newEventSeats = scanner.nextInt();
-//		
-//		System.out.println("Enter the concert price: ");
-//		concertPrice = scanner.nextFloat();
-//		
-//		Event newConcert = new Concert(newEventTitle, newEventDate, newEventSeats, concertTime, concertPrice);
-//		
-//		System.out.println(newConcert.toString());
-//		newConcert.getSeatsNumber();
+		
+		
+		//SECTION TO TEST THE CONCERT SUBCLASS
 		
 		
 		
+		System.out.println("*********************************************");
 		
+		//Declaration of the additional variables to populate the concert instance
+		
+		int concertHour;
+		int concertMinutes;
+		LocalTime concertTime = null;
+		float concertPrice;
+		
+		check = true;
+		while(check) {	
+		
+			//Ask to user the title of the new event
+			
+			System.out.println("\nEnter the title of the new event: ");
+			
+			newEventTitle = scanner.nextLine();
+			
+			//Ask to user the date of the new event
+				
+			System.out.println("\nEnter the date of the new event in the order year, month, day in numeric form");
+			System.out.println("For example, to indicate April 1 2025 enter 2025 - 4 - 1");
+			
+			
+			System.out.println("\nEnter the year of the event: ");
+			int newEventYear = scanner.nextInt();
+			
+			System.out.println("\nEnter the month of the event: ");
+			int newEventMonth = (scanner.nextInt() - 1);
+			
+			System.out.println("\nEnter the day of the event: ");
+			int newEventDay = scanner.nextInt();
+			
+			newEventDate.set(newEventYear, newEventMonth, newEventDay);
+			
+			//Ask to user the hour of the event
+			
+			System.out.println("\nEnter the hour of the event in the order hours and then minutes");
+			
+			System.out.println("\nEnter the hour: ");
+			concertHour = scanner.nextInt();
+			
+			System.out.println("\nEnter the minutes: ");
+			concertMinutes = scanner.nextInt();
+			
+			concertTime = LocalTime.of(concertHour, concertMinutes);
+			
+			//Ask to user the number of seats of the new event
+				
+			System.out.println("\nEnter the number of seats expected for the event: ");
+			newEventSeats = scanner.nextInt();
+			scanner.nextLine();
+			
+			System.out.println("\nEnter the concert price: ");
+			concertPrice = scanner.nextFloat();
+			
+			Event newConcert = new Concert(newEventTitle, newEventDate, newEventSeats, concertTime, concertPrice);
+			
+			
+			//The part of the code regarding print event info is executed only if the data entered is correct
+			
+			if(newConcert.getEventDate() != null && newConcert.getSeatsNumber() > 0 ) {
+				
+				//Print the information about the concert
+				
+				System.out.println(newConcert.toString());
+				newConcert.seatsInfo();;
+				
+				check = false;
+				
+		}else {
+			
+			System.out.println("The event data insertion must be repeated");
+			
+		}
+		
+	}
 		
 		
 		scanner.close();
