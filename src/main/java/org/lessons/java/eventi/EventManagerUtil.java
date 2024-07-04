@@ -28,7 +28,6 @@ public class EventManagerUtil {
 	public static Calendar populateDate(int year, int month, int day) {
 		
 		
-		
 		int newEventYear = year;
 		int newEventMonth = month;
 		int newEventDay = day;

@@ -40,11 +40,12 @@ public class Concert extends Event {
 			String formattedDate = EventManagerUtil.dateFormatter(getEventDate());
 			String formattedPrice = EventManagerUtil.priceFormatter(concertPrice);
 			
-			return (formattedDate + getConcertHour() + " - " + getTitle() + " - " + formattedPrice );
+			return (formattedDate + " " + getConcertHour() + " - " + getTitle() + " - " + formattedPrice );
 			
 			
 		}
 	
+		
 	
 	
 }
