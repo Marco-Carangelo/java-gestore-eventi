@@ -32,6 +32,18 @@ public class Concert extends Event {
 		this.concertPrice = concertPrice;
 	}
 
+	//Override of the toString() method to get event event information formatted into a string
+	
+		public String toString() {
+			
+			
+			String formattedDate = EventManagerUtil.dateFormatter(getEventDate());
+			String formattedPrice = EventManagerUtil.priceFormatter(concertPrice);
+			
+			return (formattedDate + getConcertHour() + " - " + getTitle() + " - " + formattedPrice );
+			
+			
+		}
 	
 	
 	
