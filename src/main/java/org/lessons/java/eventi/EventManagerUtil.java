@@ -1,6 +1,7 @@
 package org.lessons.java.eventi;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -24,18 +25,13 @@ public class EventManagerUtil {
 	
 	//Method used to acquire the fields to populate a calendar object
 	
-	public static Calendar populateDate() {
+	public static Calendar populateDate(int year, int month, int day) {
 		
 		
 		
-		System.out.println("Enter the year of the event: ");
-		int newEventYear = scanner.nextInt();
-		
-		System.out.println("Enter the month of the event: ");
-		int newEventMonth = (scanner.nextInt() - 1);
-		
-		System.out.println("Enter the day of the event: ");
-		int newEventDay = scanner.nextInt();
+		int newEventYear = year;
+		int newEventMonth = month;
+		int newEventDay = day;
 		
 		Calendar newEventDate = Calendar.getInstance();
 		
@@ -90,6 +86,17 @@ public class EventManagerUtil {
 			String formattedPrice =  String.format("%.2f €", price);
 			
 			return formattedPrice;
+			
+		}
+		
+	
+	//Method that takes two variables for hours and minutes and return a localTime object
+		
+		public static LocalTime setHour(int hour, int minutes) {
+			
+			LocalTime settedHour = LocalTime.of(hour, minutes);
+			
+			return settedHour;
 			
 		}
 	
