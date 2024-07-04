@@ -1,7 +1,6 @@
 package org.lessons.java.eventi;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Scanner;
 
