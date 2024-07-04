@@ -83,6 +83,14 @@ public class EventManagerUtil {
 			return choice;
 		}
 	
-	
+	//Method to format a price in the ##,##€ format
+		
+		public static String priceFormatter( float price) {
+			
+			String formattedPrice =  String.format("%.2f €", price);
+			
+			return formattedPrice;
+			
+		}
 	
 }
