@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//Scanner classe instance to acquire input by user
+		//Scanner class instance to acquire input by user
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -21,9 +21,9 @@ public class Main {
 		int numberOfReservations;
 		int numnerOfCancellations;
 		
-		//Variable used to check continuation of while cycles
-		boolean check = true;
+		//The data insertion is in a while loop, to consent to repeat it if some values is wrong
 		
+		boolean check = true;
 		while(check) {	
 		
 			//Ask to user the title of the new event
@@ -46,7 +46,7 @@ public class Main {
 			System.out.println("Enter the day of the event: ");
 			int newEventDay = scanner.nextInt();
 			
-			newEventDate =  (Calendar) EventManagerUtil.populateDate(newEventYear,newEventMonth, newEventDay ).clone();
+			newEventDate.set(newEventYear, newEventMonth, newEventDay);
 			
 			//Ask to user the number of seats of the new event
 				
@@ -196,7 +196,7 @@ public class Main {
 //		
 //		System.out.println(newConcert.toString());
 //		newConcert.getSeatsNumber();
-//		
+		
 		
 		
 		
