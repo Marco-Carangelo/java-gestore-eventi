@@ -1,6 +1,7 @@
 package org.lessons.java.eventi;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class eventProgram {
@@ -53,6 +54,30 @@ public class eventProgram {
 	public int eventListSize() {
 		
 		return this.eventList.size();
+		
+	}
+	
+	
+	//Method that return a list of the events in a specific date
+	
+	public List checkEventsAtDate(Calendar date) {
+		
+		 List<Event> listAtDate = new ArrayList<Event>();
+		
+		 for(int i = 0; i < eventList.size(); i++) {
+			 
+			 Calendar dateInList = eventList.get(i).getEventDate();
+			 
+			 if(dateInList.compareTo(date) == 0) {
+				 
+				 listAtDate.add(eventList.get(i));
+				 
+			 }
+			 
+		 }
+		
+		return listAtDate;
+		
 		
 	}
 	

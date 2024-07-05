@@ -68,6 +68,7 @@ public class EventManagerUtil {
 			return formattedPrice;
 			
 		}
+
 		
 	
 }
