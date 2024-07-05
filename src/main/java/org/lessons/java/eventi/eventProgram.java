@@ -39,5 +39,14 @@ public class eventProgram {
 		
 	}
 	
+	//Method to clear the list
+	
+	public void clearEventList() {
+		
+		this.eventList.clear();
+		System.out.println("La lista di eventi è stata svuotata");
+		
+	}
+	
 
 }
