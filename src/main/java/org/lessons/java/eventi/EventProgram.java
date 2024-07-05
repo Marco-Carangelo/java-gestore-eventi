@@ -45,7 +45,7 @@ public class EventProgram {
 	public void clearEventList() {
 		
 		this.eventList.clear();
-		System.out.println("The event list has been cleared");
+		System.out.println("\nThe event list has been cleared");
 		
 	}
 	
@@ -60,7 +60,7 @@ public class EventProgram {
 	
 	//Method that return a list of the events in a specific date
 	
-	public List checkEventsAtDate(Calendar date) {
+	public List<Event>  checkEventsAtDate(Calendar date) {
 		
 		 List<Event> listAtDate = new ArrayList<Event>();
 		
@@ -68,7 +68,7 @@ public class EventProgram {
 			 
 			 Calendar dateInList = eventList.get(i).getEventDate();
 			 
-			 if(dateInList.compareTo(date) == 0) {
+			 if(EventManagerUtil.dateFormatter(date).compareTo(EventManagerUtil.dateFormatter(dateInList)) == 0) {
 				 
 				 listAtDate.add(eventList.get(i));
 				 
@@ -90,11 +90,12 @@ public class EventProgram {
 		
 		for(int i=1; i < eventList.size(); i++) {
 			
-			Calendar date = eventList.get(i).getEventDate();
+			Event eventAtI = eventList.get(i);
+			Calendar date = eventAtI.getEventDate();
 			
 			int j = i-1;
 			
-			while(j <= 0 && eventList.get(j).getEventDate().compareTo(date) > 0 ){
+			while(j >= 0 && eventList.get(j).getEventDate().compareTo(date) > 0 ){
 				
 				eventList.set(j + 1, eventList.get(j));
 				
@@ -102,11 +103,11 @@ public class EventProgram {
 				
 			}
 			
-			eventList.set(j + 1, eventList.get(i));
+			eventList.set(j + 1, eventAtI);
 			
 		}
 		
-		System.out.println("List of the " + this.programTitle + " events sorted by date:\n");
+		System.out.println("\nList of the " + this.programTitle + " events sorted by date:\n");
 		
 		for(Event ev : eventList) {
 			
