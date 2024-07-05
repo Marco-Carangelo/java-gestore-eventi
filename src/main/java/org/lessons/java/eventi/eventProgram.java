@@ -44,7 +44,15 @@ public class eventProgram {
 	public void clearEventList() {
 		
 		this.eventList.clear();
-		System.out.println("La lista di eventi è stata svuotata");
+		System.out.println("The event list has been cleared");
+		
+	}
+	
+	//Method that return the number of element in the list
+	
+	public int eventListSize() {
+		
+		return this.eventList.size();
 		
 	}
 	
