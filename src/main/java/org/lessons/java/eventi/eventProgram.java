@@ -81,5 +81,39 @@ public class eventProgram {
 		
 	}
 	
+	
+	//Method that sort the list by date and print the program title and the sorted event list 
+	
+	public void eventListByDate() {
+		
+		//Sort the ArrayList using the insertion sort
+		
+		for(int i=1; i < eventList.size(); i++) {
+			
+			Calendar date = eventList.get(i).getEventDate();
+			
+			int j = i-1;
+			
+			while(j <= 0 && eventList.get(j).getEventDate().compareTo(date) > 0 ){
+				
+				eventList.set(j + 1, eventList.get(j));
+				
+				j--;
+				
+			}
+			
+			eventList.set(j + 1, eventList.get(i));
+			
+		}
+		
+		System.out.println("List of the " + this.programTitle + " events sorted by date:\n");
+		
+		for(Event ev : eventList) {
+			
+			System.out.println(EventManagerUtil.dateFormatter(ev.getEventDate()) + " - " + ev.getTitle());
+		}
+		
+		
+	}
 
 }
