@@ -31,8 +31,13 @@ public class eventProgram {
 		this.eventList = eventList;
 	}  
 	
+	//Method to add an event to the list
 	
-	
+	public void addEvent(Event newEvent) {
+		
+		this.eventList.add(newEvent);
+		
+	}
 	
 
 }
