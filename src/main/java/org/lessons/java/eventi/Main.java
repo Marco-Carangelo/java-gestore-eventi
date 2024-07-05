@@ -1,7 +1,9 @@
 package org.lessons.java.eventi;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -221,6 +223,7 @@ public class Main {
 			
 			System.out.println("\nEnter the concert price: ");
 			concertPrice = scanner.nextFloat();
+			scanner.nextLine();
 			
 			Event newConcert = new Concert(newEventTitle, newEventDate, newEventSeats, concertTime, concertPrice);
 			
@@ -244,7 +247,61 @@ public class Main {
 		
 	}
 		
-		//SECTIONO TO TEST THE ev
+		//SECTION TO TEST THE EventProgram CLASS
+		
+		System.out.println("\n***********************************************\n");
+		
+		//Ask to user the title of the program
+		System.out.println("\nEnter the title of the new event program: ");
+		String newProgramTitle = scanner.nextLine();
+		
+		//Create an instance of the EventProgram class
+		EventProgram newProgram = new EventProgram(newProgramTitle );
+		
+		//Test the addEvent method by creating three events and adding them to newProgram
+		
+		//Set a new date before passing it to the constructor. We set two equal dates for later test
+		newEventDate.set(2024, 11, 1);
+		Event testEvent1 = new Event("Conferenza java", newEventDate, 400 );
+		
+		Event testEvent2 = new Event("Presentazione libro M.P.", newEventDate, 100 );
+		
+		newEventDate.set(2025, 4, 1);
+		Event testEvent3 = new Event("Mostra sugli Allosauri", newEventDate, 500 );
+		
+		//Test the addEvent method
+		newProgram.addEvent(testEvent2);
+		newProgram.addEvent(testEvent3);
+		newProgram.addEvent(testEvent1);
+		
+		//Test the method to print the number of element in the list
+		System.out.println("\nThe number of events in this program is: " + newProgram.eventListSize());
+		
+		//Test the method to get a list of events at a specific date
+		
+		Calendar dateToCheck = Calendar.getInstance();
+		dateToCheck.set(2024, 11, 1);
+		
+		List<Event> listAtDate = new ArrayList<Event>();
+		
+		listAtDate.addAll(newProgram.checkEventsAtDate(dateToCheck));
+		
+		System.out.println("\nList of events on the date " + EventManagerUtil.dateFormatter(dateToCheck) + ":\nboh" );
+		
+		for(Event ev: listAtDate) {
+			System.out.println(ev.toString());
+		}
+		
+		//Test the method to get the program Title and the list of event sorted by date
+		
+		newProgram.eventListByDate();
+		
+		//Test the method to clear the list and then try check if the list is empty
+		
+		newProgram.clearEventList();
+		
+		if(newProgram.getEventList().isEmpty())
+			System.out.println("\nList emptiness verified");
 		
 		scanner.close();
 	}
