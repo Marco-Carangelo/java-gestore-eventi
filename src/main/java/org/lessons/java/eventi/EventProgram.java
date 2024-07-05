@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class eventProgram {
+public class EventProgram {
 	
 	private String programTitle;
 	private List<Event> eventList;
 	
-	public eventProgram(String programTitle) {
+	public EventProgram(String programTitle) {
 		
 		this.programTitle = programTitle;
 		this.eventList = new ArrayList<Event>();

@@ -244,6 +244,7 @@ public class Main {
 		
 	}
 		
+		//SECTIONO TO TEST THE ev
 		
 		scanner.close();
 	}
