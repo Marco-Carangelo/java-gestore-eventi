@@ -6,7 +6,7 @@ public class Event {
 	
 	//Class fields definition
 	
-	private String title;
+	private String eventTitle;
 	private Calendar eventDate;
 	private int seatsNumber;
 	private int eventReservation = 0;
@@ -17,7 +17,7 @@ public class Event {
 	
 	public Event(String title, Calendar eventDate , int seatsNumber) {
 		
-		this.title = title;
+		this.eventTitle = title;
 		
 		
 		if(eventDate.after(currentDate)) {
@@ -48,12 +48,12 @@ public class Event {
 
 
 	public String getTitle() {
-		return title;
+		return eventTitle;
 	}
 
 
 	public void setTitle(String title) {
-		this.title = title;
+		this.eventTitle = title;
 	}
 
 
@@ -159,7 +159,7 @@ public class Event {
 		
 		String formattedDate = EventManagerUtil.dateFormatter(eventDate);
 		
-		return (formattedDate + " - " + this.title);
+		return (formattedDate + " - " + this.eventTitle);
 		
 		
 	}
