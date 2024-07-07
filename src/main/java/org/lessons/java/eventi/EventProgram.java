@@ -111,7 +111,7 @@ public class EventProgram {
 		
 		for(Event ev : eventList) {
 			
-			System.out.println(EventManagerUtil.dateFormatter(ev.getEventDate()) + " - " + ev.getTitle());
+			System.out.println(EventManagerUtil.dateFormatter(ev.getEventDate()) + " - " + ev.getEventTitle());
 		}
 		
 		
