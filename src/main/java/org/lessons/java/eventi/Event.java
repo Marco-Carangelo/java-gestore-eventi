@@ -180,8 +180,8 @@ public class Event {
 	
 	public void seatsInfo() {
 	
-		System.out.println("Number of reserved seats: " + getEventReservation());
-		System.out.println("Number of available seats: " + availableSeats());
+		System.out.println("Number of reserved seats for the event " + this.eventTitle + ": " + getEventReservation());
+		System.out.println("Number of available seats for the event " + this.eventTitle + ": " + availableSeats());
 		
 	}
 	
