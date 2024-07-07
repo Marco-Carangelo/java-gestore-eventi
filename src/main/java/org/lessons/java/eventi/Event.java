@@ -20,6 +20,7 @@ public class Event {
 		this.eventTitle = title;
 		
 		
+		
 		if(eventDate.after(currentDate)) {
 			
 			this.eventDate = (Calendar) eventDate.clone();	
@@ -47,12 +48,12 @@ public class Event {
 	//Getters and Setters
 
 
-	public String getTitle() {
+	public String getEventTitle() {
 		return eventTitle;
 	}
 
 
-	public void setTitle(String title) {
+	public void setEventTitle(String title) {
 		this.eventTitle = title;
 	}
 
