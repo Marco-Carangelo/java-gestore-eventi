@@ -18,7 +18,6 @@ public class Main {
 		
 		String newEventTitle;
 		Calendar newEventDate = Calendar.getInstance();
-		//Calendar currentDate = Calendar.getInstance();
 		int newEventSeats;
 		int numberOfReservations;
 		int numnerOfCancellations;
@@ -67,10 +66,10 @@ public class Main {
 			if(newEvent.getEventDate() != null && newEvent.getSeatsNumber() > 0 ) {
 		
 				//Print event information to check the correct creation of the instance
-				System.out.println(newEvent.toString());
+				System.out.println("\nShort description of the event: " + newEvent.toString());
 				
 				//Ask user if he wants to make any reservation and if yes, how many of it
-				//The program exit the loop when the reservation are validated and made or when he choose to no enter a reservation
+				//The program exit the loop when the reservation are validated and finalized or when he choose to not enter a reservation
 				
 				check = true;
 				while(check) {
@@ -104,7 +103,7 @@ public class Main {
 					}
 					
 					
-				}
+				}//End of the loop for reservation
 				
 				
 				//Print information about available and reserved seats
@@ -145,7 +144,7 @@ public class Main {
 						check = false;
 					}
 					
-				}
+				}//End of the loop to manage cancellation
 				
 				
 				//Print information about available and reserved seats
@@ -154,7 +153,10 @@ public class Main {
 				
 				check = false;
 				
-		}else {
+		}
+			
+			//Else of the first loop, in which we create the instance of the Event class
+			else {
 			
 			System.out.println("The event data insertion must be repeated");
 			
