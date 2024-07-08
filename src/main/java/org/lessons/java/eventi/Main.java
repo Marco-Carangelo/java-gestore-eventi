@@ -92,7 +92,7 @@ public class Main {
 							
 						}else {
 							
-							System.out.println("Sorry but number of available seats are only " + newEvent.availableSeats() + "\nA reservetion for an higher number cannot be booked" );
+							System.out.println("Sorry but number of available seats is only " + newEvent.availableSeats() + "\nA reservetion for an higher number cannot be booked" );
 							
 						}
 						
@@ -132,7 +132,7 @@ public class Main {
 							
 						}else {
 							
-							System.out.println("Sorry but number of reserved seats are only " + newEvent.getEventReservation() + "\nA cancellation for an higher number cannot be done" );
+							System.out.println("Sorry but number of reserved seats is only " + newEvent.getEventReservation() + "\nA cancellation for an higher number cannot be done" );
 							
 						}
 						
@@ -236,8 +236,8 @@ public class Main {
 				
 				//Print the information about the concert
 				
-				System.out.println(newConcert.toString());
-				newConcert.seatsInfo();;
+				System.out.println("\nShort description of the event: " + newConcert.toString());
+				newConcert.seatsInfo();
 				
 				check = false;
 				
@@ -251,7 +251,7 @@ public class Main {
 		
 		//SECTION TO TEST THE EventProgram CLASS
 		
-		System.out.println("\n***********************************************\n");
+		System.out.println("\n***********************************************");
 		
 		//Ask to user the title of the program
 		System.out.println("\nEnter the title of the new event program: ");
@@ -288,7 +288,7 @@ public class Main {
 		
 		listAtDate.addAll(newProgram.checkEventsAtDate(dateToCheck));
 		
-		System.out.println("\nList of events on the date " + EventManagerUtil.dateFormatter(dateToCheck) + ":\nboh" );
+		System.out.println("\nList of events on the date " + EventManagerUtil.dateFormatter(dateToCheck) + ":\n" );
 		
 		for(Event ev: listAtDate) {
 			System.out.println(ev.toString());
