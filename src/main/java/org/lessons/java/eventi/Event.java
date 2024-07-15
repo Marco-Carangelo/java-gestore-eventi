@@ -88,7 +88,7 @@ public class Event {
 			
 		}else if(eventReservation == seatsNumber){
 			
-			System.out.println("The event is soldout");
+			System.out.println("There aren't enough seats left for this event");
 			
 		}else {
 			
@@ -105,7 +105,7 @@ public class Event {
 			
 		}else if(eventReservation == seatsNumber){
 			
-			System.out.println("The event is soldout");
+			System.out.println("There aren't enough seats left for this event");
 			
 		}else {
 			
@@ -124,7 +124,7 @@ public class Event {
 			
 		}else if(eventReservation == 0){
 			
-			System.out.println("There are no reservetion to cancel for this event");
+			System.out.println("There are no reserved seats to cancel");
 			
 		}else {
 			
@@ -143,7 +143,7 @@ public class Event {
 			
 		}else if(eventReservation == 0){
 			
-			System.out.println("There are no reservetion to cancel for this event");
+			System.out.println("There are no reserved seats to cancel");
 			
 		}else {
 			
