@@ -6,13 +6,28 @@ import java.util.Calendar;
 public class Concert extends Event {
 	
 	private LocalTime concertHour;
-	private float concertPrice;
+	private float concertPrice = -1;
 
 	public Concert(String title, Calendar eventDate, int seatsNumber, LocalTime concertHour, float concertPrice) {
 		super(title, eventDate, seatsNumber);
 		
 		this.concertHour = concertHour;
-		this.concertPrice = concertPrice;
+		
+		if(concertPrice >= 0) {
+			
+			this.concertPrice = concertPrice;
+			
+			if(concertPrice == 0) {
+				
+				System.out.println("PAY ATTENTION. The event has been setted as free entry");
+				
+			}
+			
+		} else {
+			
+			System.out.println("The price can't be negative.");
+		}
+		
 		
 	}
 

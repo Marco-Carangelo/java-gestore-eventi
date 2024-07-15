@@ -172,7 +172,7 @@ public class Main {
 		
 		
 		System.out.println("*********************************************");
-		
+		System.out.println("CONCERT CLASS TEST");
 		//Declaration of the additional variables to populate the concert instance
 		
 		int concertHour;
@@ -224,20 +224,21 @@ public class Main {
 			newEventSeats = scanner.nextInt();
 			scanner.nextLine();
 			
-			System.out.println("\nEnter the concert price: ");
+			System.out.println("\nEnter the concert price, (0 for a free entry event) : ");
 			concertPrice = scanner.nextFloat();
 			scanner.nextLine();
 			
-			Event newConcert = new Concert(newEventTitle, newEventDate, newEventSeats, concertTime, concertPrice);
+			Concert newConcert = new Concert(newEventTitle, newEventDate, newEventSeats, concertTime, concertPrice);
 			
 			
 			//The part of the code regarding print event info is executed only if the data entered is correct
 			
-			if(newConcert.getEventDate() != null && newConcert.getSeatsNumber() > 0 ) {
+			if(newConcert.getEventDate() != null && newConcert.getSeatsNumber() > 0 && newConcert.getConcertPrice() >= 0) {
 				
 				//Print the information about the concert
 				
 				System.out.println("\nShort description of the event: " + newConcert.toString());
+				System.out.println();
 				newConcert.seatsInfo();
 				
 				check = false;
@@ -253,6 +254,7 @@ public class Main {
 		//SECTION TO TEST THE EventProgram CLASS
 		
 		System.out.println("\n***********************************************");
+		System.out.println("EVENT PROGRAM CLASS TEST");
 		
 		//Ask to user the title of the program
 		System.out.println("\nEnter the title of the new event program: ");
