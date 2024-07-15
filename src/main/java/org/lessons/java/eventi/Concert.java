@@ -6,7 +6,7 @@ import java.util.Calendar;
 public class Concert extends Event {
 	
 	private LocalTime concertHour;
-	private float concertPrice = -1;
+	private float concertPrice;
 
 	public Concert(String title, Calendar eventDate, int seatsNumber, LocalTime concertHour, float concertPrice) {
 		super(title, eventDate, seatsNumber);
@@ -26,6 +26,7 @@ public class Concert extends Event {
 		} else {
 			
 			System.out.println("The price can't be negative.");
+			this.concertPrice = concertPrice;
 		}
 		
 		
