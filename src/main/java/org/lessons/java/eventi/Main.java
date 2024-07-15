@@ -80,19 +80,20 @@ public class Main {
 						
 						//Ask user how many reservation wants to make
 				
-						System.out.println("\nHow many seats do you want to reserve?");
+						System.out.println("\nHow many seats do you want to reserve?\nThe number of available seats is " + newEvent.availableSeats());
+						
 						numberOfReservations = scanner.nextInt();
 						scanner.nextLine();
 						
 						//Check if the number entered is greater then the available seats and if so warns the user
-						if(numberOfReservations <= newEvent.availableSeats()) {
+						if(numberOfReservations <= newEvent.availableSeats() && numberOfReservations > 0) {
 							
 							newEvent.reserveSeat(numberOfReservations);	
 							check = false;
 							
 						}else {
 							
-							System.out.println("Sorry but number of available seats is only " + newEvent.availableSeats() + "\nA reservetion for an higher number cannot be booked" );
+							System.out.println("Sorry but the number of available seats is only " + newEvent.availableSeats() + "\nA reservetion for an higher number cannot be booked" );
 							
 						}
 						
@@ -125,7 +126,7 @@ public class Main {
 						numnerOfCancellations = scanner.nextInt();
 						scanner.nextLine();
 						
-						if(numnerOfCancellations <= newEvent.getEventReservation()) {
+						if(numnerOfCancellations <= newEvent.getEventReservation() && numnerOfCancellations > 0) {
 							
 							newEvent.cancelReservation(numnerOfCancellations);	
 							check = false;
