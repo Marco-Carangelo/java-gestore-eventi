@@ -155,6 +155,7 @@ public class Event {
 	
 	//Override of the toString() method to get event event information formatted into a string
 	
+	@Override
 	public String toString() {
 		
 		
