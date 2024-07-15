@@ -63,7 +63,17 @@ public class EventManagerUtil {
 		
 		public static String priceFormatter( float price) {
 			
-			String formattedPrice =  String.format("%.2f €", price);
+			String formattedPrice;
+			
+			if(price != 0) {
+				
+				formattedPrice =  String.format("%.2f €", price);
+			}else {
+				
+				formattedPrice = "Free Entry";
+				
+			}
+			
 			
 			return formattedPrice;
 			
